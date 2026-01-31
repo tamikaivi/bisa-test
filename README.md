@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Proyecto Bisa Test
 
-## Getting Started
+Este proyecto está construido con **Next.js** y puede ejecutarse tanto en entorno local como usando **Docker**.
 
-First, run the development server:
+## 📦 Requisitos previos
 
+Asegúrate de tener instalado:
+
+- **Node.js** (versión recomendada: 20.x o superior)
+- **npm** o **yarn**
+- **Docker** (si deseas ejecutarlo con contenedores)
+
+Verifica las versiones:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+node -v
+npm -v
+docker -v
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Ejecución en entorno local (sin Docker)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 1️⃣ Instalar dependencias
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Desde la raíz del proyecto ejecuta:
+```bash
 
-## Learn More
+npm install  
+```
+o si usas yarn:
+```bash
+yarn install  
+```
+---
+### 2️⃣ Ejecutar el proyecto en modo desarrollo
+```bash
 
-To learn more about Next.js, take a look at the following resources:
+npm run dev  
+```
+o:
+```bash
+yarn dev  
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3️⃣ Acceder a la aplicación
 
-## Deploy on Vercel
+Abre tu navegador en:
+```bash
+http://localhost:3000  
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🐳 Ejecución usando Docker
+
+### 1️⃣ Construir la imagen Docker
+
+Desde la raíz del proyecto (donde se encuentra el Dockerfile):
+```bash
+docker build -t bisa-test-nextjs .
+```
+
+
+### 2️⃣ Ejecutar el contenedor
+```bash
+docker run -p 3000:3000 bisa-test-nextjs
+```
+Esto expone el puerto 3000 del contenedor al puerto 3000 de tu máquina local.
+
+
+
+### 3️⃣ Acceder a la aplicación
+
+Abre tu navegador en:
+```bash
+http://localhost:3000  
+```
+
+
+## 🛑 Detener el contenedor
+
+Si el contenedor se está ejecutando en primer plano:
+```bash
+CTRL + C  
+```
+Si se está ejecutando en segundo plano:
+```bash
+docker ps  
+docker stop <container_id>  
+```
+
+
+## 📁 Scripts disponibles
+
+- npm run dev → Ejecuta la aplicación en modo desarrollo
+- npm run build → Genera el build de producción
+- npm run start → Ejecuta el build de producción
+
+
+
+## 📝 Notas
+
+- El puerto por defecto de la aplicación es 3000
+
