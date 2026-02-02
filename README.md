@@ -1,4 +1,4 @@
-# Proyecto Bisa Test
+# Prueba técnica 
 
 Este proyecto está construido con **Next.js** y puede ejecutarse tanto en entorno local como usando **Docker**.
 
@@ -56,13 +56,13 @@ http://localhost:3000
 
 Desde la raíz del proyecto (donde se encuentra el Dockerfile):
 ```bash
-docker build -t bisa-test-nextjs .
+docker build -t prueba-tecnica-30-01-nextjs .
 ```
 
 
 ### 2️⃣ Ejecutar el contenedor
 ```bash
-docker run -p 3000:3000 bisa-test-nextjs
+docker run -p 3000:3000 prueba-tecnica-30-01-nextjs
 ```
 Esto expone el puerto 3000 del contenedor al puerto 3000 de tu máquina local.
 
